@@ -9,6 +9,7 @@
     "build": "tsc",
     "serve": "node dist/index.js",
     "start": "tsc && npm run serve",
+    "watch": "nodemon dist/index.js",
     "lint": "eslint 'src/**/*'"
   },
   "husky": {
@@ -27,6 +28,7 @@
     "eslint": "^6.7.1",
     "eslint-utils": "^1.4.3",
     "husky": "^3.1.0",
+    "nodemon": "^2.0.1",
     "typescript": "^3.7.2"
   },
   "dependencies": {
