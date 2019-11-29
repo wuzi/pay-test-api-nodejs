@@ -1,5 +1,5 @@
 import { BaseContext } from 'koa';
-import cities from '../data/city_list.json';
+import City from '../models/city';
 
 /**
  * Resourceful controller for interacting with cities
@@ -12,6 +12,6 @@ export default class CityController {
    * @param {BaseContext} ctx Koa Context
    */
   public static async index(ctx: BaseContext): Promise<void> {
-    ctx.body = cities;
+    ctx.body = City.findAll();
   }
 }
