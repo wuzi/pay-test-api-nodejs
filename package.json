@@ -1,0 +1,8 @@
+{
+  "name": "pay-test-api-nodejs",
+  "version": "1.0.0",
+  "description": "pay test api made with nodejs",
+  "main": "dist/index.js",
+  "author": "Wuzi",
+  "license": "MIT"
+}
