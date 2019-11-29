@@ -1,0 +1,15 @@
+definitions:
+  CityCoord:
+    type: object
+    properties:
+      lon:
+        type: number
+        example: -2354.132455
+        description: 'Longitude of the city'
+      lat:
+        type: number
+        example: 154.124546
+        description: 'Latitude of the city'
+    required:
+      - lat
+      - lon

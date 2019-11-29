@@ -1,0 +1,15 @@
+/cities:
+  get:
+    tags:
+      - City
+    summary: Show a list of all cities
+    description: Show a list of all cities
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Return an array with all cities
+        schema:
+          type: array
+          items:
+            $ref: '#/definitions/City'

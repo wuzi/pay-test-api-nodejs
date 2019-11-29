@@ -1,0 +1,20 @@
+definitions:
+  CityStation:
+    type: object
+    properties:
+      id:
+        type: number
+        example: 3985
+        description: 'Id of city station'
+      dist:
+        type: number
+        example: 4
+        description: 'Dist of city station'
+      kf:
+        type: number
+        example: 1
+        description: 'Kf of city station'
+    required:
+      - id
+      - dist
+      - kf

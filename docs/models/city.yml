@@ -1,0 +1,30 @@
+definitions:
+  City:
+    type: object
+    properties:
+      id:
+        type: number
+        example: 1
+        description: 'Id of the city'
+      coord:
+        $ref: '#/definitions/CityCoord'
+      country:
+        type: string
+        example: 'AR'
+        description: 'Initials of country'
+      geoname:
+        $ref: '#/definitions/CityCoord'
+      name:
+        type: string
+        example: 'Campeche'
+        description: 'Name of city'
+      stat:
+        $ref: '#/definitions/CityStat'
+      stations:
+        type: array
+        items:
+          $ref: '#/definitions/CityStation'
+      zoom:
+        type: number
+        example: 7
+        description: 'Zoom of city'

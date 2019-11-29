@@ -21,3 +21,7 @@ npm start
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning.
+
+## Documentation
+
+To view the documentation, start the server and go to `{{host}}/v1/docs`.

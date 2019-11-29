@@ -1,0 +1,20 @@
+definitions:
+  CityGeoName:
+    type: object
+    properties:
+      cl:
+        type: string
+        example: 'P'
+        description: 'CL of city'
+      code:
+        type: string
+        example: 'PPLA'
+        description: 'Code of city'
+      parent:
+        type: number
+        example: 6546498
+        description: 'Parent of city'
+    required:
+      - cl
+      - code
+      - parent
