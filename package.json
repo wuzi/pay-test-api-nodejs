@@ -4,5 +4,18 @@
   "description": "pay test api made with nodejs",
   "main": "dist/index.js",
   "author": "Wuzi",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "serve": "node dist/index.js",
+    "start": "tsc && npm run serve"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^12.12.14",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
 }
