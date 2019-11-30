@@ -10,15 +10,17 @@
     "serve": "node dist/index.js",
     "start": "tsc && npm run serve",
     "watch": "nodemon dist/index.js",
+    "test": "jest --coverage",
     "lint": "eslint . --ext .ts"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsc --noEmit && eslint . --ext .ts"
+      "pre-commit": "tsc --noEmit && eslint . --ext .ts && jest"
     }
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
+    "@types/jest": "^24.0.23",
     "@types/koa": "^2.11.0",
     "@types/koa-bodyparser": "^4.3.0",
     "@types/koa-router": "^7.0.42",
@@ -30,7 +32,9 @@
     "eslint": "^6.7.1",
     "eslint-utils": "^1.4.3",
     "husky": "^3.1.0",
+    "jest": "^24.9.0",
     "nodemon": "^2.0.1",
+    "ts-jest": "^24.2.0",
     "typescript": "^3.7.2"
   },
   "dependencies": {
