@@ -1,0 +1,20 @@
+definitions:
+  WeatherInfo:
+    type: object
+    properties:
+      id:
+        type: number
+        example: 803
+        description: 'Id of weather info'
+      main:
+        type: string
+        example: 'clouds'
+        description: 'Main of weather info'
+      description:
+        type: string
+        example: 'broken clouds'
+        description: 'description of weather info'
+      icon:
+        type: string
+        example: '04n'
+        description: 'Icon of weather info'

@@ -1,0 +1,12 @@
+definitions:
+  Weather:
+    type: object
+    properties:
+      cityId:
+        type: number
+        example: 1
+        description: 'Id of the city'
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/WeatherData'

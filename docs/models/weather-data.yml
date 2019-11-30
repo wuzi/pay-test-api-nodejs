@@ -1,0 +1,38 @@
+definitions:
+  WeatherData:
+    type: object
+    properties:
+      dt:
+        type: number
+        example: 1489428000
+        description: 'Date of weather'
+      temp:
+        $ref: '#/definitions/WeatherTemp'
+      pressure:
+        type: number
+        example: 997.85
+        description: 'Pressure of weather'
+      humidity:
+        type: number
+        example: 67
+        description: 'Humidity of weather'
+      weather:
+        type: array
+        items:
+          $ref: '#/definitions/WeatherInfo'
+      speed:
+        type: number
+        example: 2.96
+        description: 'Speed of weather'
+      deg:
+        type: number
+        example: 28
+        description: 'Deg of weather'
+      clouds:
+        type: number
+        example: 76
+        description: 'Clouds of weather'
+      uvi:
+        type: number
+        example: 7.59
+        description: 'UVI of weather'

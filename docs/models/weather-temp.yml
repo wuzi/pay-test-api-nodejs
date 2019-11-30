@@ -1,0 +1,28 @@
+definitions:
+  WeatherTemp:
+    type: object
+    properties:
+      day:
+        type: number
+        example: 288.64
+        description: 'Day of weather temp'
+      min:
+        type: number
+        example: 288.64
+        description: 'Min of weather temp'
+      max:
+        type: number
+        example: 288.64
+        description: 'Max of weather temp'
+      night:
+        type: number
+        example: 288.64
+        description: 'Night of weather temp'
+      eve:
+        type: number
+        example: 288.64
+        description: 'Eve of weather temp'
+      morn:
+        type: number
+        example: 288.64
+        description: 'Morn of weather temp'

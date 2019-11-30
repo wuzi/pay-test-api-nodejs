@@ -10,4 +10,10 @@ router.prefix('/v1/cities');
  */
 router.get('/', CityController.index);
 
+/**
+ * Show a single city by id.
+ * GET v1/cities/:id
+ */
+router.get('/:id', CityController.show);
+
 export default router;
