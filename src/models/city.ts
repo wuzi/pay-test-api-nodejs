@@ -14,15 +14,25 @@ export default class City {
   public weather?: Weather;
 
   public static findAll(where?: Partial<CityFindAllOptions>): City[] {
-    if (where && where.hasWeather) {
-      // this filter would be made in database if we were using one
-      const result: City[] = [];
-      for (const city of cities) {
-        const weather = weathers.find(w => w.cityId == city.id);
-        if (!weather) continue;
+    let [...result] = cities;
 
-        result.push(city);
+    if (where) {
+      // this filter would be made in database if we were using one
+      if (where.hasWeather) {
+        for (let i = result.length - 1; i >= 0; i--) {
+          const weather = weathers.find(w => w.cityId == result[i].id);
+          if (!weather) result.splice(i, 1);
+        }
       }
+
+      if (where.lat) {
+        result = result.filter(r => r.coord.lat == where.lat);
+      }
+
+      if (where.lon) {
+        result = result.filter(r => r.coord.lon == where.lon);
+      }
+
       return result;
     }
     return cities;

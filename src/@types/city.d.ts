@@ -22,4 +22,6 @@ interface CityStation {
 
 interface CityFindAllOptions {
   hasWeather: boolean;
+  lat: number;
+  lon: number;
 }

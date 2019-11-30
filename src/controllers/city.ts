@@ -12,10 +12,12 @@ export default class CityController {
    * @param {Context} ctx Koa Context
    */
   public static async index(ctx: Context): Promise<void> {
-    const { hasWeather } = ctx.request.query;
+    const { hasWeather, lat, lon } = ctx.request.query;
 
     const where: Partial<CityFindAllOptions> = {};
     if (hasWeather == 'true') where.hasWeather = true;
+    if (lat) where.lat = lat;
+    if (lon) where.lon = lon;
 
     ctx.body = City.findAll(where);
   }
