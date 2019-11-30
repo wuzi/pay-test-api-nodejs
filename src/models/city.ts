@@ -1,4 +1,5 @@
 import cities from '../data/city_list.json';
+import weathers from '../data/weather_list.json';
 import Weather from './weather.js';
 
 export default class City {
@@ -12,7 +13,18 @@ export default class City {
   public zoom!: number;
   public weather?: Weather;
 
-  public static findAll(): City[] {
+  public static findAll(where?: Partial<CityFindAllOptions>): City[] {
+    if (where && where.hasWeather) {
+      // this filter would be made in database if we were using one
+      const result: City[] = [];
+      for (const city of cities) {
+        const weather = weathers.find(w => w.cityId == city.id);
+        if (!weather) continue;
+
+        result.push(city);
+      }
+      return result;
+    }
     return cities;
   }
 

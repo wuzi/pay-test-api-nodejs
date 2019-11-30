@@ -19,3 +19,7 @@ interface CityStation {
   dist: number;
   kf: number;
 }
+
+interface CityFindAllOptions {
+  hasWeather: boolean;
+}

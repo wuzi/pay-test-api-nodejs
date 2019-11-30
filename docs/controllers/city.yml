@@ -6,6 +6,12 @@
     description: Show a list of all cities
     produces:
       - application/json
+    parameters:
+      - name: hasWeather
+        in: query
+        type: string
+        enum: ['true', 'false']
+        description: Get only cities that have weather
     responses:
       200:
         description: Return an array with all cities
