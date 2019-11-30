@@ -11,7 +11,7 @@ export default class Weather {
   public static findByCityId(id: number, where?: Partial<WeatherWhereOptions>): Weather | undefined {
     const { ...weather } = weathers.find(w => w.cityId == id);
 
-    if (where && weather) {
+    if (where) {
       if (where.startDate) {
         const date = new Date(where.startDate);
         weather.data = weather.data.filter(r => new Date(r.dt * 1000).getTime() >= date.getTime());
@@ -23,6 +23,6 @@ export default class Weather {
       }
     }
 
-    return weather;
+    return Object.keys(weather).length > 0 ? weather : undefined;
   }
 }
