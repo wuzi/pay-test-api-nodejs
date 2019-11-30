@@ -16,6 +16,12 @@ export default class CityController {
 
     const where: Partial<CityFindAllOptions> = {};
     if (hasWeather == 'true') where.hasWeather = true;
+
+    /**
+     * Could also be made with minLat, maxLat, minLon, maxLon
+     * and filter all cities within radius, but this is only
+     * checking if it's the same lat and lon for simplicity
+     */
     if (lat) where.lat = lat;
     if (lon) where.lon = lon;
 
