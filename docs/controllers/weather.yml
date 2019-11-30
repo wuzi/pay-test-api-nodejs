@@ -12,12 +12,22 @@
         type: integer
         required: true
         description: The id of the city
+      - name: startDate
+        in: query
+        type: string
+        example: '2017-02-01'
+        description: The start date to filter
+      - name: endDate
+        in: query
+        type: string
+        example: '2017-04-01'
+        description: The end date to filter
     responses:
       200:
         description: Return an array of weathers of a single city
         schema:
           type: array
           items:
-            ref: '#/definitions/WeatherData'
+            $ref: '#/definitions/WeatherData'
       404:
         description: City not found

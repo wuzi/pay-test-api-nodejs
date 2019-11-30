@@ -8,7 +8,21 @@ export default class Weather {
     return weathers;
   }
 
-  public static findByCityId(id: number): Weather | undefined {
-    return weathers.find(w => w.cityId == id);
+  public static findByCityId(id: number, where?: Partial<WeatherWhereOptions>): Weather | undefined {
+    const { ...weather } = weathers.find(w => w.cityId == id);
+
+    if (where && weather) {
+      if (where.startDate) {
+        const date = new Date(where.startDate);
+        weather.data = weather.data.filter(r => new Date(r.dt * 1000).getTime() >= date.getTime());
+      }
+
+      if (where.endDate) {
+        const date = new Date(where.endDate);
+        weather.data = weather.data.filter(r => new Date(r.dt * 1000).getTime() <= date.getTime());
+      }
+    }
+
+    return weather;
   }
 }

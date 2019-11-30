@@ -12,12 +12,9 @@ export default class WeatherController {
    * @param {Context} ctx Koa Context
    */
   public static async index(ctx: Context): Promise<void> {
-    const weather = Weather.findByCityId(ctx.params.id);
-    if (!weather) {
-      ctx.body = [];
-      return;
-    }
+    const { startDate, endDate } = ctx.request.query;
 
-    ctx.body = weather.data;
+    const weather = Weather.findByCityId(ctx.params.id, { startDate, endDate });
+    ctx.body = weather ? weather.data : [];
   }
 }

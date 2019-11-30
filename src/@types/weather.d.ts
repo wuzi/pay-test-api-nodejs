@@ -25,3 +25,8 @@ interface WeatherInfo {
   description: string;
   icon: string;
 }
+
+interface WeatherWhereOptions {
+  startDate: number;
+  endDate: number;
+}
