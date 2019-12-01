@@ -27,6 +27,6 @@ interface WeatherInfo {
 }
 
 interface WeatherWhereOptions {
-  startDate: number;
-  endDate: number;
+  startDate: string;
+  endDate: string;
 }
