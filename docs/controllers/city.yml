@@ -15,12 +15,10 @@
       - name: lat
         in: query
         type: number
-        example: -1231.454
         description: Filter by latitude
       - name: lon
         in: query
         type: number
-        example: -2134.454
         description: Filter by longitude
     responses:
       200:
