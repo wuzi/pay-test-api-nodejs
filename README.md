@@ -12,6 +12,19 @@ npm install
 npm start
 ```
 
+## Docker
+To run the app with docker first build the image:
+
+```bash
+docker build -t wuzi/pay-test-api-nodejs:0.1.0 .
+```
+
+Then start the container:
+
+```bash
+docker-compose up
+```
+
 ## Built With
 
 * [nodejs](https://nodejs.org/en/) - JavaScript run-time environment
