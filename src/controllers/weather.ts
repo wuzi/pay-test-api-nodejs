@@ -1,4 +1,5 @@
 import { Context } from 'koa';
+import City from '../models/city';
 import Weather from '../models/weather';
 
 /**
@@ -13,6 +14,13 @@ export default class WeatherController {
    */
   public static async index(ctx: Context): Promise<void> {
     const { startDate, endDate } = ctx.request.query;
+
+    const city = City.findById(ctx.params.id);
+    if (!city) {
+      ctx.status = 404;
+      ctx.body = { message: 'Cidade não encontrada' };
+      return;
+    }
 
     const weather = Weather.findByCityId(ctx.params.id, { startDate, endDate });
     ctx.body = weather ? weather.data : [];

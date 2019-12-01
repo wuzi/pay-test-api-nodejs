@@ -33,13 +33,27 @@ describe('weather controller', (): void => {
     expect(Array.isArray(ctx.body)).toBe(true);
   });
 
-  it('should show an empty list of weathers if can\'t find city', (): void => {
+  it('should return status 404 if can\'t find city', (): void => {
     const ctx: any = {
       request: {
         query: {},
       },
       params: {
         id: 9977,
+      },
+    };
+
+    WeatherController.index(ctx);
+    expect(ctx.status).toBe(404);
+  });
+
+  it('should return an empty array if city doesn\'t have weathers', (): void => {
+    const ctx: any = {
+      request: {
+        query: {},
+      },
+      params: {
+        id: 3863379,
       },
     };
 
