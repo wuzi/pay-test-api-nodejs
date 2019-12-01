@@ -13,7 +13,7 @@ definitions:
         example: 'AR'
         description: 'Initials of country'
       geoname:
-        $ref: '#/definitions/CityCoord'
+        $ref: '#/definitions/CityGeoName'
       name:
         type: string
         example: 'Campeche'
