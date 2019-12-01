@@ -1,6 +1,6 @@
 import cities from '../data/city_list.json';
 import weathers from '../data/weather_list.json';
-import Weather from './weather.js';
+import Weather from './weather';
 
 export default class City {
   public id!: number;
