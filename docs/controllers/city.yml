@@ -10,7 +10,7 @@
       - name: hasWeather
         in: query
         type: string
-        enum: ['true', 'false']
+        enum: ['true']
         description: Get only cities that have weather
       - name: lat
         in: query
